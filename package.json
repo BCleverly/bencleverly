@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.4"
     },
     "dependencies": {
+        "mix-tailwindcss": "^1.1.0",
         "quill": "^1.3.6"
     }
 }
