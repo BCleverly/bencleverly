@@ -31814,17 +31814,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/admin/app.scss":
-/*!***************************************!*\
-  !*** ./resources/scss/admin/app.scss ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/scss/public/app.scss":
 /*!****************************************!*\
   !*** ./resources/scss/public/app.scss ***!
@@ -31837,15 +31826,14 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!****************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/scss/public/app.scss ./resources/scss/admin/app.scss ***!
-  \****************************************************************************************************/
+/*!********************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/scss/public/app.scss ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\bencleverly\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\laragon\www\bencleverly\resources\scss\public\app.scss */"./resources/scss/public/app.scss");
-module.exports = __webpack_require__(/*! C:\laragon\www\bencleverly\resources\scss\admin\app.scss */"./resources/scss/admin/app.scss");
+__webpack_require__(/*! /Sites/bencleverly/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Sites/bencleverly/resources/scss/public/app.scss */"./resources/scss/public/app.scss");
 
 
 /***/ })

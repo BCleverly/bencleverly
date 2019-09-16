@@ -12,39 +12,28 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-gray-100 h-screen antialiased leading-none">
-    <div id="app">
-        <nav class="bg-blue-900 shadow mb-8 py-6">
-            <div class="container mx-auto px-6 md:px-0">
-                <div class="flex items-center justify-center">
-                    <div class="ml-6">
-                        <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
-                            {{ config('app.name', 'Laravel') }}
-                        </a>
-                    </div>
-                    <div class="flex-1 text-right">
-                        @guest
-                            <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            @if (Route::has('register'))
-                                <a class="no-underline hover:underline text-gray-300 text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            @endif
-                        @else
-                            <span class="text-gray-300 text-sm pr-4">{{ Auth::user()->name }}</span>
-
-                            <a href="{{ route('logout') }}"
-                               class="no-underline hover:underline text-gray-300 text-sm p-3"
-                               onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                {{ csrf_field() }}
-                            </form>
-                        @endguest
-                    </div>
-                </div>
+<body class="antialiased bg-primary-500">
+    <div id="app" class="flex">
+        <div class="flex w-screen fixed bottom-0 bg-secondary-500 text-white border-orange-500 border-t-8 p-4">
+            <div class="w-3/4">
+                <h1 class="text-orange-500 font-bold text-3xl"><a href="/">Ben Cleverly</a></h1>
+                <h2 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h2>
             </div>
-        </nav>
+            <nav class="flex w-1/4 justify-around">
+                <a href="#" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
+                    <i class="fad fa-book text-2xl mb-3"></i>
+                    <span class="block">Work</span>
+                </a>
+                <a href="#" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
+                    <i class="fad fa-code-branch text-2xl mb-3"></i>
+                    Posts
+                </a>
+            </nav>
+        </div>
+        <div>
+            @yield('content')
+        </div>
 
-        @yield('content')
     </div>
 
     <!-- Scripts -->

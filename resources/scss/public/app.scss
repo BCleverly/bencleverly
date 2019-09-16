@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap');
+
+@import "~@fortawesome/fontawesome-pro/scss/fontawesome";
+@import "~@fortawesome/fontawesome-pro/scss/duotone";
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -60,3 +65,11 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+body {
+    @apply .font-mono;
+    overscroll-behavior-y: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    @apply .font-sans;
+}
