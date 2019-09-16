@@ -16,10 +16,7 @@ require('mix-tailwindcss');
  */
 
 mix.js('resources/js/app.js', 'public/js')
-// .postCss('resources/css/app.css', 'public/css')
-
     .sass('resources/scss/public/app.scss', 'public/css')
-    .sass('resources/scss/admin/app.scss', 'public/css/admin')
     .tailwind('./tailwind.config.js')
     .purgeCss();
 
