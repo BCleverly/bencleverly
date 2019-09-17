@@ -13,24 +13,24 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="antialiased bg-primary-500">
-    <div id="app" class="flex">
-        <div class="flex w-screen fixed bottom-0 bg-secondary-500 text-white border-orange-500 border-t-8 p-4">
-            <div class="w-3/4">
+    <div id="app" class="flex flex-column">
+        <div class="flex lg:flex-col lg:justify-between w-screen lg:h-screen lg:w-1/4 fixed bottom-0 lg:bottom-auto lg:left-0 bg-secondary-500 text-white border-orange-500 border-t-8 p-4 lg:border-t-0 lg:border-r-8">
+            <div class="w-3/4 lg:w-full">
                 <h1 class="text-orange-500 font-bold text-3xl"><a href="/">Ben Cleverly</a></h1>
                 <h2 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h2>
             </div>
-            <nav class="flex w-1/4 justify-around">
+            <nav class="flex w-1/4 lg:w-full justify-around">
                 <a href="#" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
                     <i class="fad fa-book text-2xl mb-3"></i>
                     <span class="block">Work</span>
                 </a>
-                <a href="#" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
+                <a href="{{ route('post.index') }}" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
                     <i class="fad fa-code-branch text-2xl mb-3"></i>
                     Posts
                 </a>
             </nav>
         </div>
-        <div>
+        <div class="w-full lg:w-3/4 lg:ml-auto p-5 text-grey-200 text-xl pb-32 lg:pb-5">
             @yield('content')
         </div>
 

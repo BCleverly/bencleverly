@@ -5,17 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 use Spatie\Sluggable\{HasSlug, SlugOptions};
 use Laravel\Scout\Searchable;
-use Rinvex\Categories\Traits\Categorizable;
-
 
 class Post extends Model
 {
-    use Categorizable, Searchable, HasSlug, SoftDeletes;
+    use HasSlug, SoftDeletes;
 
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('name')
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
 

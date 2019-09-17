@@ -1,5 +1,6 @@
 <?php
 
+use App\Post;
 use Illuminate\Database\Seeder;
 
 class PostsTableSeeder extends Seeder
@@ -11,6 +12,7 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // Create three App\User instances...
+        $posts = factory(App\Post::class, 50)->create();
     }
 }
