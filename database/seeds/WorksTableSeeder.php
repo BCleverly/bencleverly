@@ -121,6 +121,16 @@ class WorksTableSeeder extends Seeder
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
+        $crickGuides = App\Work::create([
+            'title' => 'Cricklade Guides Step Tracker',
+            'description' => '',
+            'body' => '',
+            'user_id' => 1,
+        ]);
+        $crickGuides->addMediaFromUrl('https://source.unsplash.com/random')
+            ->withResponsiveImages()
+            ->toMediaCollection('hero');
+
 
 //        $works = factory(App\Work::class, 1)->create();
 //        $works->each(function($work) {
