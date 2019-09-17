@@ -31832,8 +31832,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Sites/bencleverly/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Sites/bencleverly/resources/scss/public/app.scss */"./resources/scss/public/app.scss");
+__webpack_require__(/*! C:\laragon\www\bencleverly\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\bencleverly\resources\scss\public\app.scss */"./resources/scss/public/app.scss");
 
 
 /***/ })

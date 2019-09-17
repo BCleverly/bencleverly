@@ -8571,9 +8571,9 @@ readers do not read off random characters that represent icons */
 
   font-display: auto;
 
-  src: url("../webfonts/fa-duotone-900.eot");
+  src: url("../fonts/fa-duotone-900.eot");
 
-  src: url("../webfonts/fa-duotone-900.eot?#iefix") format("embedded-opentype"), url("../webfonts/fa-duotone-900.woff2") format("woff2"), url("../webfonts/fa-duotone-900.woff") format("woff"), url("../webfonts/fa-duotone-900.ttf") format("truetype"), url("../webfonts/fa-duotone-900.svg#fontawesome") format("svg");
+  src: url("../fonts/fa-duotone-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-duotone-900.woff2") format("woff2"), url("../fonts/fa-duotone-900.woff") format("woff"), url("../fonts/fa-duotone-900.ttf") format("truetype"), url("../fonts/fa-duotone-900.svg#fontawesome") format("svg");
 }
 
 .fad {
@@ -15216,6 +15216,29 @@ readers do not read off random characters that represent icons */
 
 .fad.fa-yin-yang:after {
   content: "\10F6AD";
+}
+
+/*!
+ * Font Awesome Pro 5.10.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Commercial License)
+ */
+
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+
+  font-style: normal;
+
+  font-weight: normal;
+
+  font-display: auto;
+
+  src: url("../fonts/fa-brands-400.eot");
+
+  src: url("../fonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-brands-400.woff2") format("woff2"), url("../fonts/fa-brands-400.woff") format("woff"), url("../fonts/fa-brands-400.ttf") format("truetype"), url("../fonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
 }
 
 /**
@@ -28704,6 +28727,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.content-body-container {
+  font-size: 1.5rem;
+}
+
+.content-body-container p {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.025em;
 }
 
 @media (min-width: 640px){

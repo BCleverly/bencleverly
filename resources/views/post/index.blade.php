@@ -7,7 +7,7 @@
         @foreach($posts as $post)
             <div class="w-full mb-4">
                 <h2 class="font-bold underline mb-2 text-3xl"><a href="{{route('post.show', $post->slug)}}" class="hover:text-orange-500">{{ $post->title }}</a></h2>
-                <p class="mb-4">{{ $post->excerpt }}</p>
+                <p class="mb-4">{{ $post->description }}</p>
                 <p><a href="{{ route('post.show', $post->slug) }}" class=" text-lg hover:text-orange-500">Read more...</a></p>
             </div>
         @endforeach

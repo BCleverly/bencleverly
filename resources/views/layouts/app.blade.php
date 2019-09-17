@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} | {{ $pageTitle ?? '' }}</title>
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -18,9 +18,12 @@
             <div class="w-3/4 lg:w-full">
                 <h1 class="text-orange-500 font-bold text-3xl"><a href="/">Ben Cleverly</a></h1>
                 <h2 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h2>
+                <div>
+                    <a href="https://github.com/BCleverly" class="text-orange-500 hover:text-green-500"><i class="fab fa-github-alt"></i></a>
+                </div>
             </div>
             <nav class="flex w-1/4 lg:w-full justify-around">
-                <a href="#" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
+                <a href="{{ route('work.index') }}" class="text-orange-500 text-center flex align-center flex-col py-2 px-2 hover:text-green-500">
                     <i class="fad fa-book text-2xl mb-3"></i>
                     <span class="block">Work</span>
                 </a>
@@ -30,7 +33,7 @@
                 </a>
             </nav>
         </div>
-        <div class="w-full lg:w-3/4 lg:ml-auto p-5 text-grey-200 text-xl pb-32 lg:pb-5">
+        <div class="w-full lg:w-3/4 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5">
             @yield('content')
         </div>
 

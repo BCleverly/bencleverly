@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap');
 
+$fa-font-path: "../fonts";
 @import "~@fortawesome/fontawesome-pro/scss/fontawesome";
 @import "~@fortawesome/fontawesome-pro/scss/duotone";
+@import "~@fortawesome/fontawesome-pro/scss/brands";
 
 /**
  * This injects Tailwind's base styles, which is a combination of
@@ -70,6 +72,15 @@ body {
     @apply .font-mono;
     overscroll-behavior-y: none;
 }
-h1,h2,h3,h4,h5,h6 {
+
+h1, h2, h3, h4, h5, h6 {
     @apply .font-sans;
+}
+
+//
+.content-body-container {
+    @apply .text-2xl;
+    p {
+        @apply .px-5 .mb-6 .tracking-wide;
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
 {
@@ -14,6 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
+//        $posts = Cache::remember('posts', (60*60)*24, function() {
+//           return Post::paginate(10);
+//        });
         $posts = Post::paginate(10);
         return view('post.index', compact('posts'));
     }
