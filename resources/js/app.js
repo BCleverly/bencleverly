@@ -30,3 +30,20 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+import BalloonEditor  from '@ckeditor/ckeditor5-build-balloon-block';
+let editorEl = document.querySelector( '#editor' );
+if (editorEl) {
+    BalloonEditor
+        .create( editorEl )
+        .then( editor => {
+            window.editor = editor;
+            editor.model.document.on( 'change:data', () => {
+                console.log( 'The data has changed!' );
+                editorEl.value = editor.getData();
+            } );
+        } )
+        .catch( error => {
+            console.error( error );
+        } );
+}
+

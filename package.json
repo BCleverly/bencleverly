@@ -25,5 +25,8 @@
         "vue-template-compiler": "^2.6.4",
         "mix-tailwindcss": "^1.1.0",
         "quill": "^1.3.7"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-balloon-block": "^12.4.0"
     }
 }

@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class WorkController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'delete', 'edit', 'update']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +31,8 @@ class WorkController extends Controller
      */
     public function create()
     {
-        //
+        $this->middleware('auth');
+        return view('work.create');
     }
 
     /**

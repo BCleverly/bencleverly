@@ -19,7 +19,8 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/scss/public/app.scss', 'public/css')
     .tailwind('./tailwind.config.js')
     .copy('node_modules/@fortawesome/fontawesome-pro/webfonts', 'public/fonts')
-    .purgeCss().options({processCssUrls: false});
+    // .purgeCss()
+    .options({processCssUrls: false});
 
 if (mix.inProduction()) {
     mix.version();

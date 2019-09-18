@@ -11,10 +11,11 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body class="antialiased bg-primary-500">
     <div id="app" class="flex flex-column">
-        <div class="flex lg:flex-col lg:justify-between w-screen lg:h-screen lg:w-1/4 fixed bottom-0 lg:bottom-auto lg:left-0 bg-secondary-500 text-white border-orange-500 border-t-8 p-4 lg:border-t-0 lg:border-r-8">
+        <div class="flex lg:flex-col lg:justify-between w-screen lg:h-screen lg:w-2/12 fixed bottom-0 lg:bottom-auto lg:left-0 bg-secondary-500 text-white border-orange-500 border-t-8 p-4 lg:border-t-0 lg:border-r-8">
             <div class="w-3/4 lg:w-full">
                 <h1 class="text-orange-500 font-bold text-3xl"><a href="/">B<span class="hidden lg:inline">en </span>Cleverly</a></h1>
                 <h2 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h2>
@@ -33,7 +34,7 @@
                 </a>
             </nav>
         </div>
-        <div class="w-full lg:w-3/4 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5">
+        <div class="w-full lg:w-10/12 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5">
             @yield('content')
         </div>
 
