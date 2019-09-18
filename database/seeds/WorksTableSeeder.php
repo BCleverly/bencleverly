@@ -13,11 +13,11 @@ class WorksTableSeeder extends Seeder
     {
         $witcombe = App\Work::create([
             'title' => 'Witcombe Cider Festival',
-            'description' => 'Gloucestershires own Cider Festival with big name acts and craft cider for you to enjoy on your August bank holiday weekend.',
+            'description' => 'Gloucestershires very own Cider Festival with big name acts and craft cider for you to enjoy on your August bank holiday weekend.',
             'body' => '',
             'user_id' => 1,
         ]);
-        $witcombe->addMediaFromUrl('https://source.unsplash.com/random')
+        $witcombe->addMedia(resource_path('images/witcombe.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -27,7 +27,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $brooks->addMediaFromUrl('https://source.unsplash.com/random')
+        $brooks->addMedia(resource_path('images/brooks.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -37,7 +37,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $whatsInTheRecipe->addMediaFromUrl('https://source.unsplash.com/random')
+        $whatsInTheRecipe->addMedia(resource_path('images/station-name.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -47,7 +47,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $gwrStationImageApi->addMediaFromUrl('https://source.unsplash.com/random')
+        $gwrStationImageApi->addMedia(resource_path('images/station-name.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -57,7 +57,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $emailWeatherAPi->addMediaFromUrl('https://source.unsplash.com/random')
+        $emailWeatherAPi->addMedia(resource_path('images/weather-api.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -67,7 +67,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $organix->addMediaFromUrl('https://source.unsplash.com/random')
+        $organix->addMedia(resource_path('images/station-name.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -77,7 +77,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $havasHeliaWebsite->addMediaFromUrl('https://source.unsplash.com/random')
+        $havasHeliaWebsite->addMedia(resource_path('images/havas-helia-ciren.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -87,7 +87,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $gapDenimSelector->addMediaFromUrl('https://source.unsplash.com/random')
+        $gapDenimSelector->addMedia(resource_path('images/station-name.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -97,7 +97,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $diageoLandingPages->addMediaFromUrl('https://source.unsplash.com/random')
+        $diageoLandingPages->addMedia(resource_path('images/diageo-promotions.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -107,7 +107,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $diageoPromotions->addMediaFromUrl('https://source.unsplash.com/random')
+        $diageoPromotions->addMedia(resource_path('images/diageo-promotions.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -117,7 +117,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $gapXMe->addMediaFromUrl('https://source.unsplash.com/random')
+        $gapXMe->addMedia(resource_path('images/station-name.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -127,7 +127,7 @@ class WorksTableSeeder extends Seeder
             'body' => '',
             'user_id' => 1,
         ]);
-        $crickGuides->addMediaFromUrl('https://source.unsplash.com/random')
+        $crickGuides->addMedia(resource_path('images/girl-guides.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('hero');
 
@@ -135,7 +135,7 @@ class WorksTableSeeder extends Seeder
 //        $works = factory(App\Work::class, 1)->create();
 //        $works->each(function($work) {
 //            $work
-//                ->addMediaFromUrl('https://source.unsplash.com/random')
+//                ->addMedia(resource_path('images/photo-1556910096-6f5e72db6803.webp'))
 //                ->withResponsiveImages()
 //                ->toMediaCollection('hero');
 //        });
