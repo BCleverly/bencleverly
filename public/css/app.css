@@ -28731,13 +28731,27 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-body-container {
   font-size: 1.5rem;
-}
-
-.content-body-container p {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.content-body-container p, .content-body-container ul, .content-body-container ol, .content-body-container h1, .content-body-container h2, .content-body-container h3, .content-body-container h4, .content-body-container h5, .content-body-container h6 {
   margin-bottom: 1.5rem;
   letter-spacing: 0.025em;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ul li {
+  margin-left: 1.5rem;
+}
+
+ol {
+  list-style-type: decimal;
 }
 
 @media (min-width: 640px){

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\{Work};
+use App\{Http\Requests\WorkStoreRequest, Http\Requests\WorkUpdateRequest, Work};
 use Illuminate\Http\Request;
 
 class WorkController extends Controller
@@ -20,7 +20,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        $works = Work::paginate(10);
+        $works = Work::orderBy('updated_at', 'desc')->paginate(10);
         return view('work.index', compact('works'));
     }
 
@@ -41,9 +41,13 @@ class WorkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(WorkStoreRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['user_id'] = auth()->user()->id;
+        $work = Work::create($data);
+
+        return response()->redirectToRoute('work.show', $work->slug);
     }
 
     /**
@@ -75,9 +79,11 @@ class WorkController extends Controller
      * @param  \App\Work  $work
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Work $work)
+    public function update(WorkUpdateRequest $request, Work $work)
     {
-        //
+        $work->update($request->validated());
+
+        return response()->redirectToRoute('work.show', $work->slug);
     }
 
     /**

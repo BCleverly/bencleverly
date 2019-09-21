@@ -82,8 +82,19 @@ h1, h2, h3, h4, h5, h6 {
 
 //
 .content-body-container {
-    @apply .text-2xl;
-    p {
-        @apply .px-5 .mb-6 .tracking-wide;
+    @apply .text-2xl .px-5 .mb-5 .mt-5;
+    p, ul, ol, h1, h2, h3, h4, h5, h6 {
+        @apply .mb-6 .tracking-wide;
     }
+}
+
+ul {
+    @apply .list-disc;
+    li {
+        @apply .ml-6;
+    }
+}
+
+ol {
+    @apply .list-decimal;
 }

@@ -30,20 +30,21 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-import BalloonEditor  from '@ckeditor/ckeditor5-build-balloon-block';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 let editorEl = document.querySelector( '#editor' );
 if (editorEl) {
-    BalloonEditor
-        .create( editorEl )
+    ClassicEditor
+        .create( editorEl , {
+            autoParagraph: false,
+        })
         .then( editor => {
-            window.editor = editor;
             editor.model.document.on( 'change:data', () => {
-                console.log( 'The data has changed!' );
-                editorEl.value = editor.getData();
+                let body = document.querySelector('#body');
+                body.value = editor.getData();
             } );
         } )
         .catch( error => {
-            console.error( error );
+
         } );
 }
 

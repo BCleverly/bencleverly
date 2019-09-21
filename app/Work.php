@@ -13,6 +13,8 @@ class Work extends Model implements HasMedia
 
     protected $with = ['user'];
 
+    protected $fillable = ['title', 'description', 'body', 'user_id'];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
