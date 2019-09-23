@@ -47,6 +47,10 @@ class WorkController extends Controller
         $data['user_id'] = auth()->user()->id;
         $work = Work::create($data);
 
+        if ($data['hero']) {
+            $work->addMediaFromRequest('hero')->toMediaCollection('hero')->singleFile();
+        }
+
         return response()->redirectToRoute('work.show', $work->slug);
     }
 
@@ -75,13 +79,20 @@ class WorkController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Work  $work
+     * @param WorkUpdateRequest $request
+     * @param \App\Work $work
      * @return \Illuminate\Http\Response
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist
+     * @throws \Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig
      */
     public function update(WorkUpdateRequest $request, Work $work)
     {
         $work->update($request->validated());
+
+        if ($request->validated()['hero']) {
+            $work->addMediaFromRequest('hero')->toMediaCollection('hero');
+        }
 
         return response()->redirectToRoute('work.show', $work->slug);
     }
@@ -94,6 +105,12 @@ class WorkController extends Controller
      */
     public function destroy(Work $work)
     {
-        //
+        try {
+            $work->delete();
+        } catch(\Exception $e) {
+
+        }
+
+        return response()->redirectToRoute('work.index');
     }
 }

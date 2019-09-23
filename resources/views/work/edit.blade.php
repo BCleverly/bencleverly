@@ -14,6 +14,15 @@
             <label for="description" class="block">Description</label>
             <textarea name="description" id="description" class="bg-transparent w-full border-b-2 px-2 py-2 w-full mb-4">{{ old('description', $work->description) }}</textarea>
         </div>
+        <div>
+            <label for="hero" class="block">Hero:</label>
+            <input type="file" name="hero" id="hero" class="mb-4">
+            @if ($errors->has('hero'))
+                <p class="text-red-500 text-xs italic mt-4">
+                    {{ $errors->first('hero') }}
+                </p>
+            @endif
+        </div>
         <div class="">
             <label for="body" class="block text-white-700">Body:</label>
             <textarea name="body" id="body" cols="30" rows="10" class="hidden">{{ old('body', $work->body) }}</textarea>
