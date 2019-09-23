@@ -3,12 +3,26 @@
 ])
 
 @section('content')
-    <div class="container mx-auto mb-5">
+    <div class="container mx-auto">
+        @if(auth()->check())
+            <div class="flex pt-5">
+                <p class="text-lg">
+                    <a href="{{ route('work.create') }}" class="text-orange-500 hover:text-green-500">Add a new piece or work</a>
+                </p>
+            </div>
+        @endif
+    </div>
+    <div class="container mx-auto mb-5 mt-5">
         @foreach($posts as $post)
-            <div class="w-full mb-4">
-                <h2 class="font-bold underline mb-2 text-3xl"><a href="{{route('post.show', $post->slug)}}" class="hover:text-orange-500">{{ $post->title }}</a></h2>
-                <p class="mb-4">{{ $post->description }}</p>
-                <p><a href="{{ route('post.show', $post->slug) }}" class=" text-lg hover:text-orange-500">Read more...</a></p>
+            <div class="w-full mb-10">
+                @if($post->getFirstMedia('hero'))
+                    <a href="{{ route('work.show', $post->slug) }}">{{ $post->getFirstMedia('hero')('post-hero') }}</a>
+                @endif
+                <div class="">
+                    <h2 class="font-bold underline mt-5 mb-4 text-3xl tracking-wide"><a href="{{route('work.show', $post->slug)}}" class="hover:text-orange-500">{{ $post->title }}</a></h2>
+                    <p class="mb-5 leading-relaxed w-3/4">{{ $post->description }}</p>
+                    <p><a href="{{ route('work.show', $post->slug) }}" class="text-lg text-orange-500 hover:text-green-500 hover:underline">Read more...</a></p>
+                </div>
             </div>
         @endforeach
     </div>

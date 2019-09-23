@@ -30,7 +30,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 let editorEl = document.querySelector( '#editor' );
 if (editorEl) {
     ClassicEditor

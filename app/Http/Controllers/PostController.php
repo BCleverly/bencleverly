@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostStoreRequest;
+use App\Http\Requests\PostUpdateRequest;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'delete', 'edit', 'update']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +22,6 @@ class PostController extends Controller
      */
     public function index()
     {
-//        $posts = Cache::remember('posts', (60*60)*24, function() {
-//           return Post::paginate(10);
-//        });
         $posts = Post::paginate(10);
         return view('post.index', compact('posts'));
     }
@@ -38,11 +42,17 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        $post = Post::create($request->validated());
+        $data = $request->validated();
+        $data['user_id'] = auth()->user()->id;
+        $post = Post::create($data);
 
-        return response()->redirectToRoute('post.show', [$post->slug]);
+        if ($data['hero']) {
+            $post->addMediaFromRequest('hero')->toMediaCollection('post-hero')->singleFile();
+        }
+
+        return response()->redirectToRoute('post.show', $post->slug);
     }
 
     /**
@@ -74,11 +84,15 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostUpdateRequest $request, Post $post)
     {
         $post->update($request->validated());
 
-        return response()->redirectToRoute('post.edit', [$post->slug]);
+        if ($request->validated()['hero']) {
+            $post->addMediaFromRequest('hero')->toMediaCollection('hero');
+        }
+
+        return response()->redirectToRoute('post.show', $post->slug);
     }
 
     /**

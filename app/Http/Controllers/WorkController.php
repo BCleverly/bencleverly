@@ -20,7 +20,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        $works = Work::orderBy('updated_at', 'desc')->paginate(10);
+        $works = Work::published()->orderBy('updated_at', 'desc')->paginate(10);
         return view('work.index', compact('works'));
     }
 
@@ -31,7 +31,6 @@ class WorkController extends Controller
      */
     public function create()
     {
-        $this->middleware('auth');
         return view('work.create');
     }
 
