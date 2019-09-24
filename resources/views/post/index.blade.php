@@ -13,6 +13,11 @@
         @endif
     </div>
     <div class="container mx-auto mb-5 mt-5">
+        @if($posts->isEmpty())
+            <div class="container mx-auto">
+                <h1 class="text-4xl text-orange-500 font-bold">No posts yet...</h1>
+            </div>
+        @endif
         @foreach($posts as $post)
             <div class="w-full mb-10">
                 @if($post->getFirstMedia('hero'))
