@@ -72,7 +72,9 @@ $fa-font-path: "../fonts";
  */
 
 body {
-    @apply .font-mono;
+    &.mono {
+        @apply .font-mono;
+    }
     @supports (-webkit-overflow-scrolling: touch) {
         //overscroll-behavior-y: none;
     }
