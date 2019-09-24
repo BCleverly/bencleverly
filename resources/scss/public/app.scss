@@ -73,7 +73,9 @@ $fa-font-path: "../fonts";
 
 body {
     @apply .font-mono;
-    overscroll-behavior-y: none;
+    @supports (-webkit-overflow-scrolling: touch) {
+        //overscroll-behavior-y: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
