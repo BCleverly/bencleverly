@@ -1,5 +1,5 @@
 @extends('layouts.app', [
-'pageTitle' => 'Homepage'
+    'pageTitle' => 'Homepage'
 ])
 
 @section('content')
