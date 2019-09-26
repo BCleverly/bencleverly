@@ -22,6 +22,7 @@ class CreateWorksTable extends Migration
             $table->string('slug');
             $table->text('description');
             $table->longText('body');
+            $table->string('url')->nullable();
 
             $table->timestamp('publish_at')->nullable();
             $table->softDeletes();
