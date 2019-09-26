@@ -17,7 +17,7 @@ class WorksTableSeeder extends Seeder
         $witcombe = App\Work::create([
             'title' => 'Witcombe Cider Festival',
             'description' => 'Gloucestershires very own Cider Festival with big name acts and craft cider for you to enjoy on your August bank holiday weekend.',
-            'body' => '',
+            'body' => '<h2><strong>Technology used:</strong></h2><ul><li>WordPress (Custom theme)<ul><li>ACF</li><li>Gutenburg</li></ul></li><li>Build tools (Laravel mix)</li></ul><p><strong>The goal of the Witcombe Cider Festival site was to increase ticket sales and give the site a bigger and better presence on the web.&nbsp;</strong></p><p>Features on the website:</p><ul><li>Instagram post importer</li><li>Countdown clock</li><li>Random CTA for ticket sales</li><li>Ticket sales via third-party</li><li>Line ups split by day and headline/non-headline</li><li>MailChimp sign up</li><li>GDPR and Cookie compliance</li></ul>',
             'user_id' => 1,
             'publish_at' => now()
         ]);
