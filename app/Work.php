@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Traits\{PublishedTrait};
+use App\Traits\{LatestTrait, PublishedTrait};
 use Illuminate\Database\Eloquent\{Model, SoftDeletes};
 use Spatie\Sluggable\{HasSlug, SlugOptions};
 use Spatie\MediaLibrary\HasMedia\{HasMedia, HasMediaTrait};
@@ -10,7 +10,7 @@ use Spatie\MediaLibrary\Models\Media;
 
 class Work extends Model implements HasMedia
 {
-    use HasSlug, SoftDeletes, HasMediaTrait, PublishedTrait;
+    use HasSlug, SoftDeletes, HasMediaTrait, PublishedTrait, LatestTrait;
 
     protected $with = ['user'];
 
@@ -55,4 +55,6 @@ class Work extends Model implements HasMedia
             ->height(680)
             ->sharpen(10);
     }
+
+
 }

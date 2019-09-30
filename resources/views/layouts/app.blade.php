@@ -11,6 +11,7 @@
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @yield('stylesheets')
 
 </head>
 <body class="antialiased bg-primary-500">
@@ -36,7 +37,7 @@
         </div>
         <div class="w-full lg:w-10/12 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5 min-h-screen">
             @yield('content')
-            <div class="container mx-auto text-sm">
+            <div class="container mx-auto text-sm mb-6 lg:mb-4 px-4">
                 &copy; 2019 Ben Cleverly; <button onclick="toggleMono();">Toggle mono</button>
             </div>
         </div>
@@ -45,5 +46,6 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    @yield('javascript')
 </body>
 </html>

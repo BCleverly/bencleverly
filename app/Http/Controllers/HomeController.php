@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\{Post, Work};
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,16 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function home()
-    {
-        return view('welcome');
+        $work = Work::latest()->first();
+        $post = Post::latest()->first();
+        return view('home', compact('work', 'post'));
     }
 }

@@ -75,6 +75,7 @@ body {
     &.mono {
         @apply .font-mono;
     }
+
     @supports (-webkit-overflow-scrolling: touch) {
         //overscroll-behavior-y: none;
     }
@@ -101,4 +102,36 @@ ul {
 
 ol {
     @apply .list-decimal;
+}
+
+.hover\:grayscale {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        filter: grayscale(100%);
+
+        img {
+            filter: grayscale(100%);
+        }
+    }
+
+    img {
+        transition: inherit;
+    }
+}
+
+.hover\:blur {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        filter: blur(.25rem);
+
+        img {
+            filter: inherit;
+        }
+    }
+
+    img {
+        transition: inherit;
+    }
 }
