@@ -55,17 +55,142 @@ $('#form').validate(_.merge(validationRules, assetRules));</code></pre>",
         $laravelLockout = App\Post::create([
             'title' => 'Laravel user lockout',
             'description' => "How to add a user lockout feature in Laravel 5.8+",
-            'body' => "<p>Hello world</p><pre><code>&lt;?php
-echo \"Hello world\";
-</code></pre>",
+            'body' => "<p>I'm assuming that you already have the auth scaffolding set up within your project.</p>
+<p>Go to the following file <code>app/Http/Controllers/Auth/LoginController.php</code> as we will be making changes to this file as well as making a new validation rule.</p>
+<p>First of all let's add the max attempts we want to be allowed before an account lock out is put in place.</p>
+<pre><code>&lt;?php
+//...
+class LoginController extends Controller
+{
+    protected &dollar;maxAttempts = 3;
+}
+</code></pre>
+<p>Next we will want to add our new validation rule in to the mix and then add that to our Validate login method.</p>
+<p>So create a new rule using Laravel's artisan command <code>php artisan make:rule AccountIsNotLocked</code> when this has successfully created, go to the file and the below to each of the methods</p>
+<pre><code>&lt;?php
+class AccountIsNotLocked implements Rule
+{
+    public function passes(&dollar;attribute, &dollar;value)
+    {
+        &dollar;user = User::where('email', &dollar;value)
+            ->where('locked_at', '!=', null)
+            ->first();
+    
+        if (is_null(&dollar;user)) {
+            return true;
+        }
+        return false;
+    }
+    
+    public function message()
+    {
+        return 'The account is locked, please contact an administrator';
+    }
+</code></pre>
+<p>Then back to our LoginController we need to add the new rule</p>
+<pre><code>&lt;?php
+//...
+class LoginController extends Controller
+{
+    protected &dollar;maxAttempts = 3;
+    
+    protected function validateLogin(Request &dollar;request)
+    {
+        &dollar;request->validate([
+            &dollar;this->username() => [
+                'required',
+                'string', 
+                new App\Rules\AccountIsNotLocked()],
+            'password' => 'required|string',
+        ]);
+    }
+}
+</code></pre>
+<p>Then we need to override the <code>hasTooManyLoginAttempts</code> default behaviour as this just throttles by default.</p>
+<pre><code>&lt;?php
+//...
+class LoginController extends Controller
+{
+    protected &dollar;maxAttempts = 3;
+    
+    protected function validateLogin(Request &dollar;request)
+    {
+        &dollar;request->validate([
+            &dollar;this->username() => [
+                'required',
+                'string', 
+                new App\Rules\AccountIsNotLocked()],
+            'password' => 'required|string',
+        ]);
+    }
+    
+    protected function hasTooManyLoginAttempts(Request &dollar;request)
+    {
+        &dollar;tooManyAttempts =  &dollar;this->limiter()->tooManyAttempts(
+            &dollar;this->throttleKey(&dollar;request),
+            &dollar;this->maxAttempts()
+        );
+
+        if (&dollar;tooManyAttempts) {
+            &dollar;user = User::where('email', &dollar;request->email)->first();
+            &dollar;user->update([
+                'locked_at' => now()
+            ]);
+        }
+
+        return &dollar;tooManyAttempts;
+    }
+}
+</code></pre>
+<p>Then finally we need to override the <code>defaultLockoutResponse</code> to cater for our lockout situaton</p>
+<pre><code>&lt;?php
+//...
+class LoginController extends Controller
+{
+    protected &dollar;maxAttempts = 3;
+    
+    protected function validateLogin(Request &dollar;request)
+    {
+        &dollar;request->validate([
+            &dollar;this->username() => [
+                'required',
+                'string', 
+                new App\Rules\AccountIsNotLocked()],
+            'password' => 'required|string',
+        ]);
+    }
+    
+    protected function hasTooManyLoginAttempts(Request &dollar;request)
+    {
+        &dollar;tooManyAttempts =  &dollar;this->limiter()->tooManyAttempts(
+            &dollar;this->throttleKey(&dollar;request),
+            &dollar;this->maxAttempts()
+        );
+
+        if (&dollar;tooManyAttempts) {
+            &dollar;user = User::where('email', &dollar;request->email)->first();
+            &dollar;user->update([
+                'locked_at' => now()
+            ]);
+        }
+
+        return &dollar;tooManyAttempts;
+    }
+    
+    protected function sendLockoutResponse(Request &dollar;request)
+    {
+        throw ValidationException::withMessages([
+            &dollar;this->username() => [\"Your account has been locked, please contact an administrator.\"],
+        ])->status(Response::HTTP_TOO_MANY_REQUESTS);
+    }
+}
+</code></pre>
+",
             'user_id' => 1,
             'publish_at' => now()
         ]);
         $laravelLockout->addMedia(resource_path('images/witcombe.jpg'))->preservingOriginal()
             ->withResponsiveImages()
             ->toMediaCollection('post-hero');
-
-        // Create three App\User instances...
-//        $posts = factory(App\Post::class, 50)->create();
     }
 }

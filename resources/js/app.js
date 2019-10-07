@@ -75,7 +75,7 @@ if (editorEl) {
         } );
 }
 
-window.toggleMono = function(e) {
-    console.log('toggling mono');
-    document.getElementsByTagName('body')[0].classList.toggle('mono')
-};
+// window.toggleMono = function(e) {
+//     console.log('toggling mono');
+//     document.getElementsByTagName('body')[0].classList.toggle('mono')
+// };

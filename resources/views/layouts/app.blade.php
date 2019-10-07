@@ -44,7 +44,6 @@
         @yield('content')
         <div class="container mx-auto text-sm mb-6 lg:mb-4 px-4">
             &copy; 2019 Ben Cleverly;
-            <button onclick="toggleMono();">Toggle mono</button>
         </div>
     </div>
 
