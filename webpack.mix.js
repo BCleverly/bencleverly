@@ -28,6 +28,8 @@ mix
 
 if (mix.inProduction()) {
     mix
-        .purgeCss()
+        .purgeCss({
+            whitelist: ['img']
+        })
         .version();
 }

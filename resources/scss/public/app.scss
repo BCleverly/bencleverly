@@ -85,12 +85,12 @@ h1, h2, h3, h4, h5, h6 {
     @apply .font-sans;
 }
 
-//
 .content-body-container {
     @apply .text-2xl .px-5 .mb-5 .mt-5;
     p, ul, ol, h1, h2, h3, h4, h5, h6 {
         @apply .mb-6 .tracking-wide;
     }
+
 }
 
 ul {
@@ -134,4 +134,9 @@ ol {
     img {
         transition: inherit;
     }
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
