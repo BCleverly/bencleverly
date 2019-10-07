@@ -5,6 +5,7 @@
 /public/js
 /public/fonts
 /public/storage
+/public/mix-manifest.json
 /storage/*.key
 /storage/medialibrary
 /vendor
