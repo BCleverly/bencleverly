@@ -3,14 +3,9 @@
 ])
 
 @section('stylesheets')
-    @parent
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-tomorrow.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.js" integrity="sha256-ISWqAwOAxClmLCu22st3+xU4+kVYHrE8jdn6ONzjg5Q=" crossorigin="anonymous"></script>
 @endsection
 
 @section('javascript')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/prism.min.js" integrity="sha256-HWJnMZHGx7U1jmNfxe4yaQedmpo/mtxWSIXvcJkLIf4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/line-numbers/prism-line-numbers.js" integrity="sha256-ISWqAwOAxClmLCu22st3+xU4+kVYHrE8jdn6ONzjg5Q=" crossorigin="anonymous"></script>
 @endsection
 
 @section('content')

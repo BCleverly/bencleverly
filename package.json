@@ -31,6 +31,8 @@
         "@ckeditor/ckeditor5-basic-styles": "^11.1.4",
         "@ckeditor/ckeditor5-build-balloon-block": "^12.4.0",
         "@ckeditor/ckeditor5-build-classic": "^12.4.0",
-        "prismjs": "^1.17.1"
+        "highlight.js": "^9.15.10",
+        "prismjs": "^1.17.1",
+        "simplemde": "^1.11.2"
     }
 }

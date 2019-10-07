@@ -8,6 +8,31 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import hljs from 'highlight.js';
+import hljsJavascript from 'highlight.js/lib/languages/javascript';
+import hljsPHP from 'highlight.js/lib/languages/php';
+import hljsCSS from 'highlight.js/lib/languages/css';
+import hljsSCSS from 'highlight.js/lib/languages/scss';
+import 'highlight.js/styles/dracula.css';
+
+hljs.registerLanguage('javascript', hljsJavascript);
+hljs.registerLanguage('php', hljsPHP);
+hljs.registerLanguage('css', hljsCSS);
+hljs.registerLanguage('scss', hljsSCSS);
+
+import SimpleMDE from 'simplemde';
+import 'simplemde/src/css/simplemde.css'
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+    });
+
+    document.querySelectorAll('.simpleMDE').forEach((block) => {
+        let simplemde = new SimpleMDE();
+    });
+});
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
