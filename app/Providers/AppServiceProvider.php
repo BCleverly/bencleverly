@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Spatie\Flash\Flash;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Flash::levels([
+            'success' => 'bg-green-500 text-green-900',
+            'warning' => 'bg-orange-500 text-orange-900',
+            'error' => 'bg-red-500 text-red-900'
+        ]);
     }
 }

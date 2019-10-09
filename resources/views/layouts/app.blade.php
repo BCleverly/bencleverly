@@ -25,6 +25,11 @@
             <div>
                 <a href="https://github.com/BCleverly" class="text-orange-500 hover:text-green-500"><i
                         class="fab fa-github-alt"></i></a>
+                @if(auth()->check())
+                    <a href="/logout" class="text-orange-500 hover:text-green-500"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
+                    <form action="/logout" method="post" id="logout-form">@csrf</form>
+                @endif
             </div>
         </div>
         <nav class="flex w-1/4 lg:w-full justify-around">
@@ -41,6 +46,13 @@
         </nav>
     </div>
     <div class="w-full lg:w-10/12 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5 min-h-screen">
+        @if(flash()->message)
+            <div class="absolute ml-4 mr-12 mt-2 p-4 rounded {{ flash()->class }}" id="flash-message">
+                {{ flash()->message }}
+
+                <button onclick="event.preventDefault(); document.getElementById('flash-message').remove();">&times;</button>
+            </div>
+        @endif
         @yield('content')
         <div class="container mx-auto text-sm mb-6 lg:mb-4 px-4">
             &copy; 2019 Ben Cleverly;

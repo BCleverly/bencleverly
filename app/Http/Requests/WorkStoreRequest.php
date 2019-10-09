@@ -25,7 +25,7 @@ class WorkStoreRequest extends FormRequest
     {
         return [
             'title' => ['required'],
-            'hero' => ['required', 'image'],
+            'hero' => ['nullable', 'image'],
             'description' => ['required'],
             'body' => ['required'],
         ];

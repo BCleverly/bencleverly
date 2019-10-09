@@ -4,6 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -15,19 +16,26 @@ import hljsCSS from 'highlight.js/lib/languages/css';
 import hljsSCSS from 'highlight.js/lib/languages/scss';
 import 'highlight.js/styles/dracula.css';
 
+require('trix');
+import 'trix/dist/trix.css';
+
+// import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import Code from "@ckeditor/ckeditor5-basic-styles/src/code";
+
+// import SimpleMDE from 'simplemde';
+// import 'simplemde/src/css/simplemde.css'
+
 hljs.registerLanguage('javascript', hljsJavascript);
 hljs.registerLanguage('php', hljsPHP);
 hljs.registerLanguage('css', hljsCSS);
 hljs.registerLanguage('scss', hljsSCSS);
 
-import SimpleMDE from 'simplemde';
-import 'simplemde/src/css/simplemde.css'
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('pre code').forEach((block) => {
         hljs.highlightBlock(block);
     });
-
     document.querySelectorAll('.simpleMDE').forEach((block) => {
         let simplemde = new SimpleMDE();
     });
@@ -56,26 +64,22 @@ const app = new Vue({
     el: '#app',
 });
 
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
-let editorEl = document.querySelector( '#editor' );
-if (editorEl) {
-    ClassicEditor
-        .create( editorEl , {
-            autoParagraph: false,
-        })
-        .then( editor => {
-            editor.model.document.on( 'change:data', () => {
-                let body = document.querySelector('#body');
-                body.value = editor.getData();
-            } );
-        } )
-        .catch( error => {
-
-        } );
-}
-
-// window.toggleMono = function(e) {
-//     console.log('toggling mono');
-//     document.getElementsByTagName('body')[0].classList.toggle('mono')
-// };
+// var simplemde = new SimpleMDE({ element: document.getElementById("body") });
+// let editorEl = document.querySelector( '#editor' );
+// if (editorEl) {
+//     ClassicEditor
+//
+//         .create( editorEl , {
+//             autoParagraph: false,
+//         })
+//         .then( editor => {
+//             console.log(Array.from( editor.ui.componentFactory.names() ));
+//             editor.model.document.on( 'change:data', () => {
+//                 let body = document.querySelector('#body');
+//                 body.value = editor.getData();
+//             } );
+//         } )
+//         .catch( error => {
+//
+//         } );
+// }

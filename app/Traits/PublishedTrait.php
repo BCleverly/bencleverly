@@ -9,10 +9,8 @@ trait PublishedTrait {
      */
     public function scopePublished($query)
     {
-        if (auth()->check()) {
-            return $query->where('publish_at', null);
+        if (!auth()->check()) {
+            return $query->where('publish_at', '!=', null);
         }
-
-        return $query->where('publish_at', '!=', null);
     }
 }

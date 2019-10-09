@@ -26,7 +26,7 @@ class WorkUpdateRequest extends FormRequest
         return [
             'title' => ['required'],
             'description' => ['required'],
-            'hero' => ['required', 'image'],
+            'hero' => ['image'],
             'body' => ['required'],
         ];
     }

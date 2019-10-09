@@ -31,9 +31,9 @@
         @if(auth()->check())
             <div class="flex mx-5 pt-5">
                 <div class="text-lg">
-                    <a href="{{ route('work.edit', $post->slug) }}" class="text-orange-500 hover:text-green-500">Edit</a>
+                    <a href="{{ route('post.edit', $post->slug) }}" class="text-orange-500 hover:text-green-500">Edit</a>
                     <a href="#" class="text-red-500 hover:text-red-600" onclick="document.getElementById('{{$post->slug}}').submit()">Delete</a>
-                    <form action="{{ route('work.destroy', $post->slug) }}" id="{{$post->slug}}" method="post">
+                    <form action="{{ route('post.destroy', $post->slug) }}" id="{{$post->slug}}" method="post">
                         @csrf
                         @method('delete')
                     </form>

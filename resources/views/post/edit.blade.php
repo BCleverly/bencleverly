@@ -25,10 +25,12 @@
         </div>
         <div class="">
             <label for="body" class="block text-white-700">Body:</label>
-            <textarea name="body" id="body" cols="30" rows="10" class="hidden">{{ old('body', $post->body) }}</textarea>
-            <div class="text-black">
-                <div id="editor" class="text-black">{!! old('body', $post->body) !!}</div>
-            </div>
+            <textarea name="body" id="body" cols="30" rows="10" class="text-black w-full">{{ old('body', $post->body) }}</textarea>
+            @if ($errors->has('body'))
+                <p class="text-red-500 text-xs italic mt-4">
+                    {{ $errors->first('body') }}
+                </p>
+            @endif
         </div>
 
         <button class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded mt-4">Save</button>

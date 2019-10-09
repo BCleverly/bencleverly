@@ -88,9 +88,11 @@ class PostController extends Controller
     {
         $post->update($request->validated());
 
-        if ($request->validated()['hero']) {
+        if (isset($request->validated()['hero'])) {
             $post->addMediaFromRequest('hero')->toMediaCollection('hero');
         }
+
+        flash()->success($post->title . ' has been updated.');
 
         return response()->redirectToRoute('post.show', $post->slug);
     }

@@ -5,6 +5,7 @@
 /public/js
 /public/fonts
 /public/storage
+/public/svg
 /public/mix-manifest.json
 /storage/*.key
 /storage/medialibrary
@@ -18,3 +19,5 @@ npm-debug.log
 yarn-error.log
 .idea
 http
+_ide_helper.php
+.phpstorm.meta.php

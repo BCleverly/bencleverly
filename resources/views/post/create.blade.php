@@ -35,10 +35,7 @@
         </div>
         <div>
             <label for="body" class="block">Body:</label>
-            <textarea name="body" id="body" cols="30" rows="10" class="hidden">{{ old('body') }}</textarea>
-            <div class="text-black">
-                <div id="editor" class="bg-transparent">{!! old('body') !!}</div>
-            </div>
+            <textarea name="body" id="body" cols="30" rows="10" class="text-black w-full">{{ old('body') }}</textarea>
             @if ($errors->has('body'))
                 <p class="text-red-500 text-xs italic mt-4">
                     {{ $errors->first('body') }}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://bencleverly.test/post/jquery-validate-mass-array-validation</loc>
+        <lastmod>2019-10-09T22:49:03+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bencleverly.test/post/laravel-user-lockout</loc>
+        <lastmod>2019-10-09T22:49:03+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bencleverly.test/work/brooks-pointon-construction</loc>
+        <lastmod>2019-10-09T22:49:03+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bencleverly.test/work/witcombe-cider-festival</loc>
+        <lastmod>2019-10-09T22:49:03+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+</urlset>

@@ -50,6 +50,8 @@ class WorkController extends Controller
             $work->addMediaFromRequest('hero')->toMediaCollection('hero')->singleFile();
         }
 
+        flash()->success($work->title . ' has been created.');
+
         return response()->redirectToRoute('work.show', $work->slug);
     }
 
@@ -89,9 +91,11 @@ class WorkController extends Controller
     {
         $work->update($request->validated());
 
-        if ($request->validated()['hero']) {
+        if (isset($request->validated()['hero'])) {
             $work->addMediaFromRequest('hero')->toMediaCollection('hero');
         }
+
+        flash()->success($work->title . ' has been updated.');
 
         return response()->redirectToRoute('work.show', $work->slug);
     }
@@ -108,7 +112,11 @@ class WorkController extends Controller
             $work->delete();
         } catch(\Exception $e) {
 
+            flash()->error($work->title . ' could not be deleted.');
+
         }
+
+        flash()->success($work->title . ' has been updated.');
 
         return response()->redirectToRoute('work.index');
     }
