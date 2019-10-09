@@ -16,8 +16,8 @@ import hljsCSS from 'highlight.js/lib/languages/css';
 import hljsSCSS from 'highlight.js/lib/languages/scss';
 import 'highlight.js/styles/dracula.css';
 
-require('trix');
-import 'trix/dist/trix.css';
+// require('trix');
+// import 'trix/dist/trix.css';
 
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 // import Code from "@ckeditor/ckeditor5-basic-styles/src/code";
