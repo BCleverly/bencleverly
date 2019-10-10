@@ -1,6 +1,6 @@
 <div class="w-full mb-10">
     @if($work->getFirstMedia('hero'))
-        <a href="{{ route('work.show', $work->slug) }}" class="">{{ $work->getFirstMedia('hero')('hero') }}</a>
+        <a href="{{ route('work.show', $work->slug) }}" class="">{!! str_replace('">', '" loading="lazy">', $work->getFirstMedia('hero')('hero')) !!}</a>
     @endif
     <div class="">
         <h2 class="font-bold  mt-5 mb-4 text-3xl tracking-wide">
