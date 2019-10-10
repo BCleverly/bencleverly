@@ -22,7 +22,7 @@ mix
 
     .copy('node_modules/@fortawesome/fontawesome-pro/webfonts', 'public/fonts')
 
-    .extract(['vue', 'axios', 'highlight.js', 'highlight.js/styles/dracula.css', 'simplemde/src/css/simplemde.css', 'simplemde', '@ckeditor/ckeditor5-build-classic'])
+    .extract(['vue', 'flatpickr', 'axios', 'highlight.js', 'highlight.js/styles/dracula.css', 'simplemde/src/css/simplemde.css', 'simplemde', '@ckeditor/ckeditor5-build-classic'])
 
     .options({processCssUrls: false});
 

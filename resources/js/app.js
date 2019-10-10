@@ -15,6 +15,8 @@ import hljsPHP from 'highlight.js/lib/languages/php';
 import hljsCSS from 'highlight.js/lib/languages/css';
 import hljsSCSS from 'highlight.js/lib/languages/scss';
 import 'highlight.js/styles/dracula.css';
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
 
 // require('trix');
 // import 'trix/dist/trix.css';
@@ -29,8 +31,6 @@ hljs.registerLanguage('javascript', hljsJavascript);
 hljs.registerLanguage('php', hljsPHP);
 hljs.registerLanguage('css', hljsCSS);
 hljs.registerLanguage('scss', hljsSCSS);
-
-
 
 document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelectorAll('pre code').forEach((block) => {
@@ -83,3 +83,8 @@ const app = new Vue({
 //
 //         } );
 // }
+
+flatpickr(".date-picker", {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i:s",
+});

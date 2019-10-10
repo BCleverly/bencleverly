@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }} | {{ $pageTitle ?? '' }}</title>
 
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @yield('stylesheets')
 
@@ -54,7 +55,7 @@
             </div>
         @endif
         @yield('content')
-        <div class="container mx-auto text-sm mb-6 lg:mb-4 px-4">
+        <div class="container mx-auto text-sm mb-6 lg:mb-4">
             &copy; 2019 Ben Cleverly;
         </div>
     </div>
@@ -62,9 +63,9 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ mix('js/manifest.js') }}"></script>
-<script src="{{ mix('js/vendor.js') }}"></script>
-<script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ mix('js/manifest.js') }}" defer></script>
+<script src="{{ mix('js/vendor.js') }}" defer></script>
+<script src="{{ mix('js/app.js') }}" defer></script>
 @yield('javascript')
 </body>
 </html>

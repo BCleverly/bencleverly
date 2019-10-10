@@ -33,6 +33,11 @@
             @endif
         </div>
 
+        <div>
+        <label for="publish_at">Publish at:</label>
+        <input type="date" name="publish_at" id="publish_at" class="date-picker text-white-700 bg-transparent border-b-2 px-2 py-2 w-full mb-4" value="{{ old('publish_at') }}">
+        </div>
+
         <button class="bg-orange-500 hover:bg-orange-600 px-4 py-2 rounded mt-4">Save</button>
     </form>
 @endsection
