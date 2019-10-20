@@ -8,4 +8,3 @@
         <p><a href="{{ route('post.show', $post->slug) }}" class="text-lg text-orange-500 hover:text-green-500 hover:underline">Read more...</a></p>
     </div>
 </div>
-w
