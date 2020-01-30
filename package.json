@@ -11,12 +11,12 @@
     },
     "devDependencies": {
         "@ckeditor/ckeditor5-build-classic": "^12.4.0",
-        "@fortawesome/fontawesome-pro": "^5.11.2",
-        "axios": "^0.19",
-        "ckeditor5-code-block": "^1.0.2",
+        "@fortawesome/fontawesome-pro": "^5.12.0",
+        "axios": "^0.19.2",
+        "ckeditor5-code-block": "^1.0.7",
         "cross-env": "^5.2.1",
         "flatpickr": "^4.6.3",
-        "highlight.js": "^9.15.10",
+        "highlight.js": "^9.18.0",
         "laravel-mix": "^4.1.4",
         "laravel-mix-purgecss": "^4.2.0",
         "laravel-mix-tailwind": "^0.1.0",
@@ -24,11 +24,11 @@
         "mix-tailwindcss": "^1.2.0",
         "quill": "^1.3.7",
         "resolve-url-loader": "^2.3.1",
-        "sass": "^1.23.0",
+        "sass": "^1.25.0",
         "sass-loader": "^7.3.1",
         "simplemde": "^1.11.2",
-        "tailwindcss": "^1.1.2",
-        "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.4"
+        "tailwindcss": "^1.1.4",
+        "vue": "^2.6.11",
+        "vue-template-compiler": "^2.6.11"
     }
 }
