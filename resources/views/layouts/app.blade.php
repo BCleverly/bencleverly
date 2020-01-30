@@ -24,9 +24,10 @@
             </h2>
             <h3 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h3>
             <div>
-                <a href="https://github.com/BCleverly" class="text-orange-500 hover:text-green-500"><i
+                <a href="https://github.com/BCleverly" class="text-orange-500 hover:text-green-500 mr-2"><i
                         class="fab fa-github-alt"></i></a>
                 @if(auth()->check())
+                    <a href="/nova" class="text-orange-500 hover:text-green-500">Admin</a> |
                     <a href="/logout" class="text-orange-500 hover:text-green-500"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit()">Logout</a>
                     <form action="/logout" method="post" id="logout-form">@csrf</form>
@@ -56,7 +57,7 @@
         @endif
         @yield('content')
         <div class="container mx-auto text-sm mb-6 lg:mb-4">
-            &copy; 2019 Ben Cleverly;
+            &copy; {{ date('Y') }} Ben Cleverly;
         </div>
     </div>
 
