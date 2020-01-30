@@ -48,7 +48,7 @@
             </a>
         </nav>
     </div>
-    <div class="w-full lg:w-10/12 lg:ml-auto text-grey-200 text-xl pb-32 lg:pb-5 min-h-screen">
+    <div class="w-full lg:w-10/12 lg:ml-auto text-grey-200 text-lg pb-32 lg:pb-5 min-h-screen">
         @if(flash()->message)
             <div class="absolute ml-4 mr-12 mt-2 p-4 rounded {{ flash()->class }}" id="flash-message">
                 {{ flash()->message }}

@@ -49,11 +49,11 @@ class Post extends Resource
 
             BelongsTo::make('user'),
 
-            Text::make('title'),
+            Text::make('title')->required(),
 
-            Textarea::make('description'),
+            Textarea::make('description')->required(),
 
-            Trix::make('body'),
+            Trix::make('body')->required(),
 
             Date::make('publish_at')
         ];
