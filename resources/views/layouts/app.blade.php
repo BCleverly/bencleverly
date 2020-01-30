@@ -24,8 +24,9 @@
             </h2>
             <h3 class="text-green-500 text-lg font-mono"><a href="/">Senior Web Developer</a></h3>
             <div>
-                <a href="https://github.com/BCleverly" class="text-orange-500 hover:text-green-500 mr-2"><i
-                        class="fab fa-github-alt"></i></a>
+                <a href="https://github.com/BCleverly" target="_blank" class="text-orange-500 hover:text-green-500 mr-2">
+                    <i class="fab fa-github-alt"></i>
+                </a>
                 @if(auth()->check())
                     <a href="/nova" class="text-orange-500 hover:text-green-500">Admin</a> |
                     <a href="/logout" class="text-orange-500 hover:text-green-500"
