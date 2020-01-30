@@ -2,7 +2,7 @@
     @if($work->getFirstMedia('hero'))
         <a href="{{ route('work.show', $work->slug) }}" class="">{!! str_replace('">', '" loading="lazy">', $work->getFirstMedia('hero')('hero')) !!}</a>
     @endif
-    <div class="">
+    <div class="px-4">
         <h2 class="font-bold  mt-5 mb-4 text-3xl tracking-wide">
             <a href="{{route('work.show', $work->slug)}}" class="underline hover:text-orange-500">{{ $work->title }}</a>
             @if(is_null($work->publish_at))
