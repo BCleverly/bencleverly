@@ -13,10 +13,10 @@
         </div>
     </div>
     <div class="container mx-auto flex flex-wrap">
-        <div class="w-full lg:w-1/2 px-4 mb-4">
+        <div class="w-full lg:w-1/2 lg:px-4 mb-4">
             @includeWhen(!is_null($work), 'work.item', ['work' => $work])
         </div>
-        <div class="w-full lg:w-1/2 px-4 mb-4">
+        <div class="w-full lg:w-1/2 lg:px-4 mb-4">
             @includeWhen(!is_null($post), 'post.item', ['post' => $post])
         </div>
     </div>
