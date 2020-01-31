@@ -87,11 +87,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .content-body-container {
     @apply .text-2xl .px-5 .mb-5 .mt-5;
-    p, ul, ol, h1, h2, h3, h4, h5, h6 {
-        @apply .mb-6 .tracking-wide;
+    p, ul, ol, h1, h2, h3, h4, h5, h6, div {
+        @apply .mb-4 .tracking-wide;
     }
     pre {
-        @apply .mb-6;
+        @apply .mb-4;
     }
 
 }

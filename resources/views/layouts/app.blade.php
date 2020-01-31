@@ -57,7 +57,7 @@
             </div>
         @endif
         @yield('content')
-        <div class="container mx-auto px-4 text-sm mb-6 lg:mb-4">
+        <div class="container mx-auto p-4 text-sm mb-6 lg:mb-4">
             &copy; {{ date('Y') }} Ben Cleverly;
         </div>
     </div>
