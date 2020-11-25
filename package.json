@@ -16,7 +16,7 @@
         "ckeditor5-code-block": "^1.0.7",
         "cross-env": "^5.2.1",
         "flatpickr": "^4.6.3",
-        "highlight.js": "^9.18.0",
+        "highlight.js": "^10.1.2",
         "laravel-mix": "^4.1.4",
         "laravel-mix-purgecss": "^4.2.0",
         "laravel-mix-tailwind": "^0.1.0",
